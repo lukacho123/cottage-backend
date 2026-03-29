@@ -37,7 +37,7 @@ const userSockets = {}; // { sessionId: socketId }
 
 module.exports = function setupChat(httpServer) {
   const io = new Server(httpServer, {
-    cors: { origin: "*" },
+    cors: { origin: "*", methods: ["GET", "POST"] },
   });
 
   io.on("connection", (socket) => {
